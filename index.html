@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+
+	<head>
+		<title>Aratuba</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	
+	<body class="is-preload">
+	    
+		<!-- Wrapper-->
+			<div id="wrapper">
+				<!-- Nav -->
+				<h1 style="color:gray; font-Garamond: 40px;">aratuba</h1>
+				<p></p>
+							
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+							<a href="#medal" class="icon solid fa-medal">‌
+						<span>Twitter</span></a>
+						<a href="#work" class="icon solid fa-user-shield"><span>Work</span></a>
+						
+						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="home" class="panel intro">
+  <header>
+      
+   
+    <nav class="menu">
+    <ul>
+     <li><a href="#work">votação</a></li>
+      <li><a id="sobre-link" href="#medal">ranking</a></li>
+      <li><a href="#contact">notificação</a></li>
+      
+      <!-- adicionais items da sua lista de menu -->
+    </ul>
+  </nav>
+ 
+  </header>
+ 
+   
+    
+  </a>
+  
+</article>
+
+   <!-- menu🟢🔴 -->
+
+
+    
+<article id="eventos" class="panel">
+   nenhum evento no momento 
+    </article>
+    
+<article id="mais..." class="panel">
+    
+    </article>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 🟢Work -->
+							<article id="work" class="panel">
+							    
+							    
+								<header>
+									<h2>questionário</h2>
+									pedimos o cpf para validar a votação,para existir o mínimo de fraldes possíveis 
+								</header>
+								<p>
+									
+								</p>
+								<form id="formulario-cpf" action="https://api.sheetmonkey.io/form/pJZCcZ9aABKDXHJCQmbDrc" method="post">
+  <label for="cpf">CPF:</label>(sem .,- )
+  <input type="text" id="cpf" name="cpf" pattern="[0-9]{11}" required>
+ 
+  <label for="prefeito">Número do Prefeito:</label>
+  <input type="text" id="prefeito" name="prefeito"><br><br>
+  <label for="vereador">Número do Vereador:</label>
+  <input type="text" id="vereador" name="vereador"><br><br>
+  <label for="localidade">Localidade:</label>
+  <input type="text" id="localidade" name="localidade"><br><br>
+  <input type="submit" value="votar">
+</form>
+
+<script>
+  const formulario = document.getElementById('formulario-cpf');
+  formulario.addEventListener('submit', eventosSubmit);
+
+  function eventosSubmit(evento) {
+    evento.preventDefault();
+    const cpf = document.getElementById('cpf').value;
+    if (validaCPF(cpf)) {
+      formulario.submit();
+    } else {
+      alert('CPF inválido!');
+    }
+  }
+
+  function validaCPF(cpf) {
+    const cpfFormatado = cpf.replace(/\D+/g, '');
+    return cpfFormatado.length === 11 && cpfFormatado.match(/^[0-9]{11}$/);
+  }
+</script>
+							</article>
+
+	<!-- 🟢Contact -->
+							<article id="contact" class="panel">
+								<header>
+									<h2>notificações</h2>
+									nenhum no momento...
+								</header>
+								
+							</article>
+<article id="medal" class="panel">
+   apuração de dados insuficiente...
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li></li><li>Instagram:<a href="">@</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+  const emailList = ["hs362613@gmail.com", "j0yplay3r@gmail.com"];
+  const emailInput = document.getElementById("email");
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submit", (e) => {
+    const enteredEmail = emailInput.value;
+    if (!emailList.includes(enteredEmail)) {
+      alert("E-mail inválido. Por favor, tente novamente.");
+      e.preventDefault();
+    }
+  });
+</script>
+
+	</body>
+</html>
