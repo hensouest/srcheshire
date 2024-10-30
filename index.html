@@ -41,26 +41,42 @@
 </div>
     <script >
         
-        
-     const chatMessages = document.getElementById('chat-messages');
+        const chatMessages = document.getElementById('chat-messages');
 const chatInput = document.getElementById('chat-input');
 const sendButton = document.getElementById('send-button');
-
-let mensagens = [];
+const apiEndpoint = '(link unavailable)';
 
 sendButton.addEventListener('click', () => {
   const mensagem = chatInput.value;
-  mensagens.push(mensagem);
-  chatInput.value = '';
-  atualizarMensagens();
+  fetch(apiEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      mensagem: mensagem
+    })
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    chatInput.value = '';
+    atualizarMensagens();
+  });
 });
 
 function atualizarMensagens() {
-  chatMessages.innerHTML = '';
-  mensagens.forEach((mensagem) => {
-    chatMessages.innerHTML += `<p>${mensagem}</p>`;
+  fetch(apiEndpoint + '/messages')
+  .then((response) => response.json())
+  .then((data) => {
+    chatMessages.innerHTML = '';
+    data.forEach((mensagem) => {
+      chatMessages.innerHTML += `<p>${mensagem.mensagem}</p>`;
+    });
   });
-}  
+}
+
+atualizarMensagens();
+      
         
     </script>
   
