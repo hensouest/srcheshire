@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+
+	<head>
+		<title>relaciona.online</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	
+	<body class="is-preload">
+	    
+		<!-- Wrapper-->
+			<div id="wrapper">
+				<!-- Nav -->
+				<h1 style="color:gray; font-Garamond: 40px;">relaciona.online</h1>
+				<p></p>
+							
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						
+						<a href="#work" class="icon solid fa-user-shield"><span>Work</span></a>
+							<a href="#medal" class="fas fa-coins">‌
+						<span>Twitter</span></a>
+						
+						
+						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="home" class="panel intro">
+  
+ <div id="chat-container">
+<div id="chat-messages"></div>
+<input id="chat-input" type="text" />
+<button id="send-button">Enviar</button>
+</div>
+    <script >
+        
+        
+     const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+const sendButton = document.getElementById('send-button');
+
+let mensagens = [];
+
+sendButton.addEventListener('click', () => {
+  const mensagem = chatInput.value;
+  mensagens.push(mensagem);
+  chatInput.value = '';
+  atualizarMensagens();
+});
+
+function atualizarMensagens() {
+  chatMessages.innerHTML = '';
+  mensagens.forEach((mensagem) => {
+    chatMessages.innerHTML += `<p>${mensagem}</p>`;
+  });
+}  
+        
+    </script>
+  
+  
+</article>
+
+   <!-- menu🟢🔴 -->
+
+
+    
+<article id="eventos" class="panel">
+   nenhum evento no momento 
+    </article>
+    
+<article id="mais..." class="panel">
+    
+    </article>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 🟢Work -->
+							<article id="work" class="panel">
+							    
+							    
+								<header>
+									<h2>questionário</h2>
+									pedimos o cpf para validar a votação,para existir o mínimo de fraldes possíveis 
+								</header>
+								<p>
+									
+								</p>
+								<form id="formulario-cpf" action="https://api.sheetmonkey.io/form/pJZCcZ9aABKDXHJCQmbDrc" method="post">
+  <label for="cpf">CPF:</label>(sem .,- )
+  <input type="text" id="cpf" name="cpf" pattern="[0-9]{11}" required>
+ 
+  <label for="prefeito">Número do Prefeito:</label>
+  <select id="vereador" name="vereador">
+    <option value="Vereador 1">Vereador 1</option>
+    <option value="Vereador 2">Vereador 2</option>
+    <option value="Vereador 3">Vereador 3</option>
+    <!-- Adicione aqui os outros vereadores... -->
+  </select><br><br>
+  <label for="vereador">Número do Vereador:</label>
+  <select id="vereador" name="vereador">
+    <option value="Vereador 1">Vereador 1</option>
+    <option value="Vereador 2">Vereador 2</option>
+    <option value="Vereador 3">Vereador 3</option>
+    <!-- Adicione aqui os outros vereadores... -->
+  </select><br><br>
+  <label for="localidade">Localidade:</label>
+  <select id="vereador" name="vereador">
+    <option value="Vereador 1">Vereador 1</option>
+    <option value="Vereador 2">Vereador 2</option>
+    <option value="Vereador 3">Vereador 3</option>
+    <!-- Adicione aqui os outros vereadores... -->
+  </select><br><br>
+  <input type="submit" value="votar">
+</form>
+
+<script>
+  const formulario = document.getElementById('formulario-cpf');
+  formulario.addEventListener('submit', eventosSubmit);
+
+  function eventosSubmit(evento) {
+    evento.preventDefault();
+    const cpf = document.getElementById('cpf').value;
+    if (validaCPF(cpf)) {
+      formulario.submit();
+    } else {
+      alert('CPF inválido!');
+    }
+  }
+
+  function validaCPF(cpf) {
+    const cpfFormatado = cpf.replace(/\D+/g, '');
+    return cpfFormatado.length === 11 && cpfFormatado.match(/^[0-9]{11}$/);
+  }
+</script>
+							</article>
+
+	<!-- 🟢Contact -->
+							<article id="contact" class="panel">
+								<header>
+									<h2>notificações</h2>
+									
+								</header>
+								
+							</article>
+<article id="medal" class="panel">
+   <div id="chat-container">
+  <h2>Chat</h2>
+  <div id="chat-messages"></div>
+  <input id="chat-input" type="text" placeholder="Digite sua mensagem">
+  <button id="chat-send">Enviar</button>
+</div>
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li></li><li>Instagram:<a href="https://www.instagram.com/relaciona_online?igsh=bzhiNm9oY212cWJy">@relaciona.online</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+  const emailList = ["hs362613@gmail.com", "j0yplay3r@gmail.com"];
+  const emailInput = document.getElementById("email");
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submit", (e) => {
+    const enteredEmail = emailInput.value;
+    if (!emailList.includes(enteredEmail)) {
+      alert("E-mail inválido. Por favor, tente novamente.");
+      e.preventDefault();
+    }
+  });
+</script>
+
+	</body>
+</html>
